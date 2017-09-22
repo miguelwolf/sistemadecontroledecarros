@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.miguelwolf.sistemadecontroledecarros">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".view.ActivityMain"
+            android:label=" "
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ActivityAgendar"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityLogin"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".view.ActivityCadastrarUsuario"
+            android:label="@string/title_activity_cadastrar_usuario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityCadastrarVeiculos"
+            android:label="@string/title_activity_cadastrar_veiculos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityReservasLista"
+            android:label="@string/title_activity_cadastrar_veiculos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityHistoricoVeiculoCadastrar"
+            android:label="@string/title_activity_cadastrar_historico_veiculo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityHistoricoVeiculoLista"
+            android:label="@string/title_activity_cadastrar_veiculos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityReservasDetalhe"
+            android:label="@string/title_activity_detalhe_reservar2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityListaVeiculos"
+            android:label="@string/title_activity_lista_veiculos2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityRegistrar"
+            android:label="@string/title_activity_registrar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.ActivityEmpresaCadastrar"
+            android:label="@string/title_activity_empresa_cadastrar"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
