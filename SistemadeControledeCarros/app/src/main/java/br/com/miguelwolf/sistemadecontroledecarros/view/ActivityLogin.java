@@ -193,7 +193,11 @@ public class ActivityLogin extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
+
+        if (email.contains("@")) {
+
+        }
+
         return email.contains("@");
     }
 

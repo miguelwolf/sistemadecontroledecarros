@@ -62,5 +62,6 @@
     <string name="title_activity_lista_veiculos2">ActivityListaVeiculos2</string>
     <string name="title_activity_registrar">ActivityRegistrar</string>
     <string name="title_activity_empresa_cadastrar">ActivityEmpresaCadastrar</string>
+    <string name="title_activity_cadas_usuario">ActivityCadasUsuario</string>
 
 </resources>

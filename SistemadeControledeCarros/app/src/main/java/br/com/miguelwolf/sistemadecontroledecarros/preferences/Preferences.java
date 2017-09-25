@@ -6,6 +6,8 @@ package br.com.miguelwolf.sistemadecontroledecarros.preferences;
 
 public class Preferences {
 
-
+    public static String BD_URL = "";
+    public static String BD_LOGIN = "";
+    public static String BD_SENHA = "";
 
 }
