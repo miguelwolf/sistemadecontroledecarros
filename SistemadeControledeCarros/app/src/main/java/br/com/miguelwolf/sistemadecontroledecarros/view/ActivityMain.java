@@ -101,10 +101,12 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         if (i == AGENDA)
             startActivity(new Intent(ActivityMain.this, ActivityAgendar.class));
 
-        else if (i == FUNCIONARIO)
-            startActivity(new Intent(ActivityMain.this, ActivityCadastrarUsuario.class));
+        else if (i == FUNCIONARIO) {
+            Intent it = new Intent(ActivityMain.this, ActivityCadasUsuario.class);
+            it.putExtra("cadastrar", false);
+            startActivity(it);
 
-        else if (i == VEICULO)
+        }else if (i == VEICULO)
             startActivity(new Intent(ActivityMain.this, ActivityListaVeiculos.class));
 
         else if (i == HISTORICO)

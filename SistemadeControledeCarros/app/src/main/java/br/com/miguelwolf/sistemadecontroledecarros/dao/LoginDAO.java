@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.miguelwolf.sistemadecontroledecarros.model.Login;
+import br.com.miguelwolf.sistemadecontroledecarros.model.Pessoa;
 import br.com.miguelwolf.sistemadecontroledecarros.model.Usuario;
+import br.com.miguelwolf.sistemadecontroledecarros.preferences.Preferences;
 
 /**
  * Created by Miguel Wolf on 25/09/2017.
@@ -44,7 +46,7 @@ public class LoginDAO {
         bd.delete("tb_login", "_codigo = "+log.getCodigo(), null);
     }
 
-    public List<Login> buscarTodos(Login log){
+    public List<Login> buscarTodos(){
         List<Login> listLogin = new ArrayList<>();
         String[] colunas = new String[]{"_codigo integer, login, senha, pessoa_codigo"};
 
@@ -55,10 +57,14 @@ public class LoginDAO {
 
             do {
                 Login login = new Login();
+
+                Pessoa pessoa = new Pessoa();
+                pessoa.setCodigo((int) cursor.getLong(3));
+
                 login.setCodigo((int) cursor.getLong(0));
                 login.setLogin(cursor.getString(1));
                 login.setSenha(cursor.getString(2));
-                login.getPessoa().setCodigo((int) cursor.getLong(4));
+                login.setPessoa(pessoa);
 
                 listLogin.add(login);
 
@@ -67,6 +73,20 @@ public class LoginDAO {
         }
 
         return listLogin;
+
+    }
+
+    public boolean verificarSenha(Login log){
+        List<Login> listLogin = new ArrayList<>();
+        String[] colunas = new String[]{Preferences.LOGIN_CODIGO+", "+Preferences.LOGIN_USUARIO+", "+Preferences.LOGIN_SENHA+", "+Preferences.LOGIN_PESSOA};
+
+        Cursor cursor = bd.query("tb_login", colunas, Preferences.LOGIN_USUARIO+"=? AND "+Preferences.LOGIN_SENHA+"=?", new String[]{log.getLogin(), log.getSenha()}, null, null, null);
+
+        if (cursor.getCount() > 0) {
+            return true;
+        }
+
+        return false;
 
     }
 

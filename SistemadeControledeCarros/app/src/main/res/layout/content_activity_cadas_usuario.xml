@@ -10,22 +10,35 @@
 
     <LinearLayout
         android:layout_width="344dp"
-        android:layout_height="439dp"
+        android:layout_height="495dp"
         android:layout_margin="10dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
         <TextView
+            android:id="@+id/cadas_usuario_vt_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nome"/>
 
-        <EditText
-            android:id="@+id/cadastrar_usuario_et_nome"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cadas_usuario_ti_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:layout_below="@id/cadas_usuario_vt_nome">
+
+            <AutoCompleteTextView
+                android:id="@+id/cadas_usuario_tv_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -34,14 +47,81 @@
             android:layout_marginTop="10dp"/>
 
         <android.support.v7.widget.AppCompatSpinner
-            android:id="@+id/cadastrar_usuario_sp_funcao"
+            android:id="@+id/cadas_usuario_sp_funcao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <Button
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cadas_usuario_ti_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PERMISSÕES"/>
+            android:layout_below="@id/cadas_usuario_sp_funcao">
+
+            <AutoCompleteTextView
+                android:id="@+id/cadas_usuario_tv_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cadas_usuario_ti_senha_antiga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cadas_usuario_ti_login">
+
+            <AutoCompleteTextView
+                android:id="@+id/cadas_usuario_tv_senha_antiga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha_antiga"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cadas_usuario_ti_senha_nova"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cadas_usuario_ti_senha_antiga">
+
+            <AutoCompleteTextView
+                android:id="@+id/cadas_usuario_tv_senha_nova"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha_nova"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cadastrar_usuario_ti_senha_nova_novamente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cadas_usuario_ti_senha_nova">
+
+            <AutoCompleteTextView
+                android:id="@+id/cadas_usuario_tv_senha_nova_novamente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha_nova_novamente"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 

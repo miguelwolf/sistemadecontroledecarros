@@ -18,8 +18,9 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Senha (opcional)</string>
-    <string name="action_sign_in">Entrar ou registrar</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_registrar">Registrar</string>
     <string name="action_sign_in_short">Entrar</string>
     <string name="error_invalid_email">Este endereço de e-mail é inválido</string>
     <string name="error_invalid_password">Esta senha é muito curta</string>
@@ -29,9 +30,10 @@
 
     <string name="nome">Nome</string>
     <string name="funcao">Função</string>
+    <string name="login">Login</string>
     <string name="senha_antiga">Senha antiga</string>
-    <string name="senha_nova">Senha nova</string>
-    <string name="senha_nova_novamente">Senha nova novamente</string>
+    <string name="senha_nova">Senha</string>
+    <string name="senha_nova_novamente">Senha novamente</string>
 
     <string name="marca">Marca</string>
     <string name="modelo">Modelo</string>
@@ -58,10 +60,11 @@
         <item>Saída</item>
     </string-array>
 
-    <string name="title_activity_detalhe_reservar2">ActivityDetalheReservar2</string>
-    <string name="title_activity_lista_veiculos2">ActivityListaVeiculos2</string>
-    <string name="title_activity_registrar">ActivityRegistrar</string>
-    <string name="title_activity_empresa_cadastrar">ActivityEmpresaCadastrar</string>
-    <string name="title_activity_cadas_usuario">ActivityCadasUsuario</string>
+    <string name="title_activity_detalhe_reservar2">Detalhe Reserva</string>
+    <string name="title_activity_lista_veiculos2">Lista de Veículos</string>
+    <string name="title_activity_registrar">Registrar</string>
+    <string name="title_activity_empresa_cadastrar">Cadastrar Empresa</string>
+    <string name="title_activity_cadas_usuario">Cadastrar Usuário</string>
+    <string name="title_activity_cadastrar_funcao">ActivityCadastrarFuncao</string>
 
 </resources>

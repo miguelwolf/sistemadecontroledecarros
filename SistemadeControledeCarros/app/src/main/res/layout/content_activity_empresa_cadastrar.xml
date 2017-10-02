@@ -14,12 +14,12 @@
     tools:showIn="@layout/activity_empresa_cadastrar">
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/cadastrar_usuario_ti_nome"
+        android:id="@+id/cadastrar_empresa_ti_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
-            android:id="@+id/cadastrar_usuario_tv_nome"
+            android:id="@+id/cadastrar_empresa_tv_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nome"
@@ -31,13 +31,13 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/cadastrar_usuario_ti_email"
+        android:id="@+id/cadastrar_empresa_ti_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cadastrar_usuario_ti_nome">
+        android:layout_below="@id/cadastrar_empresa_ti_nome">
 
         <AutoCompleteTextView
-            android:id="@+id/cadastrar_usuario_tv_email"
+            android:id="@+id/cadastrar_empresa_tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/prompt_email"

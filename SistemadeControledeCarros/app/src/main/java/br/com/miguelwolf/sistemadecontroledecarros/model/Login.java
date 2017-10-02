@@ -11,6 +11,14 @@ public class Login {
     private String senha;
     private Pessoa pessoa;
 
+    public Login() {
+    }
+
+    public Login(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
+    }
+
     public int getCodigo() {
         return codigo;
     }
