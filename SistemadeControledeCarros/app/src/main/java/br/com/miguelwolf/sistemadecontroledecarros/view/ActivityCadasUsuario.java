@@ -1,5 +1,6 @@
 package br.com.miguelwolf.sistemadecontroledecarros.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -63,7 +64,7 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
         b = getIntent().getExtras();
 
         if (b.getBoolean("cadastrar")) {
-            txtSenhaAntiga.setVisibility(View.INVISIBLE);
+            txtSenhaAntiga.setVisibility(View.GONE);
         }
 
         adpFuncoes = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
@@ -135,6 +136,8 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
 
                     Snackbar.make(view, "Operação realizada", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+
+                    finish();
 
                 } else {
                     Snackbar.make(view, "Senhas diferentes", Snackbar.LENGTH_LONG)

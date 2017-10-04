@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class MainAdapter extends BaseAdapter {
             itemHolder = new ViewHolder();
             itemHolder.imgBackground = ((ImageView) view.findViewById(R.id.adapter_main_iv_backgorund));
             itemHolder.imgIcon = ((ImageView) view.findViewById(R.id.adapter_main_iv_surface_image));
+            itemHolder.tvLegenda = (TextView) view.findViewById(R.id.adapter_main_tv_legenda);
 
             //define os itens na view;
             view.setTag(itemHolder);
@@ -70,6 +72,7 @@ public class MainAdapter extends BaseAdapter {
         ListMain listMain = itens.get(position);
         itemHolder.imgBackground.setImageResource(listMain.getBackground());
         itemHolder.imgIcon.setImageResource(listMain.getIcon());
+        itemHolder.tvLegenda.setText(listMain.getLegenda());
 
         //retorna a view com as informações
         return view;
@@ -81,5 +84,6 @@ public class MainAdapter extends BaseAdapter {
     private class ViewHolder {
         ImageView imgIcon;
         ImageView imgBackground;
+        TextView tvLegenda;
     }
 }

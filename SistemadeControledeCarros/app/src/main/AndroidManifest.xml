@@ -16,8 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.ActivityMain"
-            android:label=" "
+            android:name=".view.ActivityLogin"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,8 +30,9 @@
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".view.ActivityLogin"
-            android:label="@string/title_activity_login" />
+            android:name=".view.ActivityMain"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".view.ActivityCadastrarVeiculos"
             android:label="@string/title_activity_cadastrar_veiculos"

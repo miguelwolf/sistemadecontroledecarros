@@ -323,10 +323,6 @@ public class ActivityLogin extends AppCompatActivity implements LoaderCallbacks<
         protected Boolean doInBackground(Void... params) {
 
             LoginDAO loginDAO = new LoginDAO(ActivityLogin.this);
-
-            Log.e("AQUIIIII LOGIN",loginDAO.buscarTodos().get(0).getLogin());
-            Log.e("AQUIIIII SENHA",loginDAO.buscarTodos().get(0).getSenha());
-
             return loginDAO.verificarSenha(new Login(mUsuario, mSenha));
 
         }

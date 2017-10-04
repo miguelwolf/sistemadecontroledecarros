@@ -35,4 +35,7 @@ public class Preferences {
     public static String EMPRESA_EMAIL="email";
     public static String EMPRESA_SITUACAO="situacao";
 
+    public static int PERMISSAO_FUNCIONARIO=0;
+    public static int PERMISSAO_ADMINISTRADOR=1;
+
 }

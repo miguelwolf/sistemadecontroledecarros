@@ -83,6 +83,31 @@ public class LoginDAO {
         Cursor cursor = bd.query("tb_login", colunas, Preferences.LOGIN_USUARIO+"=? AND "+Preferences.LOGIN_SENHA+"=?", new String[]{log.getLogin(), log.getSenha()}, null, null, null);
 
         if (cursor.getCount() > 0) {
+
+            cursor.moveToFirst();
+
+            do {
+                Login login = new Login();
+
+                Pessoa pessoa = new Pessoa();
+                pessoa.setCodigo((int) cursor.getLong(3));
+
+                login.setCodigo((int) cursor.getLong(0));
+                login.setLogin(cursor.getString(1));
+                login.setSenha(cursor.getString(2));
+                login.setPessoa(pessoa);
+
+                listLogin.add(login);
+
+                Sessao sessao = new Sessao();
+                sessao.setUsuario(cursor.getString(1));
+
+                PESQUISAR PELA PERMISSAO NA PESSOA.
+                sessao.setPermissao(cursor.);
+
+
+            } while(cursor.moveToNext());
+
             return true;
         }
 

@@ -40,7 +40,7 @@
             android:id="@+id/cadastrar_empresa_tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/prompt_email"
+            android:hint="@string/prompt_usuario"
             android:inputType="textEmailAddress"
             android:lines="1"
             android:maxLines="1"

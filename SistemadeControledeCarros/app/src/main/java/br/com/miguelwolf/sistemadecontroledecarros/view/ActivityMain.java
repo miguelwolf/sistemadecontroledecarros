@@ -69,17 +69,17 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         itens = new ArrayList<ListMain>();
 
 //        AGENDA = 0
-        itens.add(new ListMain(R.drawable.agenda_wallpaper, R.drawable.ic_event_white_36dp));
+        itens.add(new ListMain(R.drawable.agenda_wallpaper, R.drawable.ic_event_white_36dp, "Agenda"));
 //        FUNCIONARIO = 1
-        itens.add(new ListMain(R.drawable.funcionario_wallpaper, R.drawable.ic_account_circle_white_36dp));
+        itens.add(new ListMain(R.drawable.funcionario_wallpaper, R.drawable.ic_account_circle_white_36dp, "Funcionário"));
 //        VEICULO = 2
-        itens.add(new ListMain(R.drawable.carro_wallpaper, R.drawable.ic_directions_car_white_36dp));
+        itens.add(new ListMain(R.drawable.carro_wallpaper, R.drawable.ic_directions_car_white_36dp, "Veículo"));
 //        HISTORICO = 3
-        itens.add(new ListMain(R.drawable.historico_wallpaper, R.drawable.ic_timeline_white_36dp));
+        itens.add(new ListMain(R.drawable.historico_wallpaper, R.drawable.ic_timeline_white_36dp, "Histórico"));
 //        RESERVA = 4
-        itens.add(new ListMain(R.drawable.reserva_wallpaper, R.drawable.ic_event_note_white_36dp));
-//        RESERVA = 5
-        itens.add(new ListMain(R.drawable.registrar_wallpaper, R.drawable.ic_playlist_add_check_white_36dp));
+        itens.add(new ListMain(R.drawable.reserva_wallpaper, R.drawable.ic_event_note_white_36dp, "Reserva"));
+//        RELATÓRIOS = 5
+        itens.add(new ListMain(R.drawable.registrar_wallpaper, R.drawable.ic_playlist_add_check_white_36dp, "Relatórios"));
 
         //Cria o adapter
         MainAdapter mainAdapter = new MainAdapter(this, itens);
@@ -98,12 +98,14 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+
+
         if (i == AGENDA)
             startActivity(new Intent(ActivityMain.this, ActivityAgendar.class));
 
         else if (i == FUNCIONARIO) {
             Intent it = new Intent(ActivityMain.this, ActivityCadasUsuario.class);
-            it.putExtra("cadastrar", false);
+            it.putExtra("cadastrar", true);
             startActivity(it);
 
         }else if (i == VEICULO)

@@ -24,4 +24,16 @@
         android:src="@drawable/ic_event_white_36dp"
         android:scaleType="fitCenter"/>
 
+    <TextView
+        android:id="@+id/adapter_main_tv_legenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="@color/branco"
+        android:text="Agenda"
+        android:textSize="18sp"/>
+
 </RelativeLayout>

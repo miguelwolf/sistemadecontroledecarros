@@ -8,10 +8,12 @@ public class ListMain {
 
     private Integer background;
     private Integer icon;
+    private String legenda;
 
-    public ListMain(Integer background, Integer icon) {
+    public ListMain(Integer background, Integer icon, String legenda) {
         this.background = background;
         this.icon = icon;
+        this.legenda = legenda;
     }
 
     public Integer getBackground() {
@@ -28,5 +30,13 @@ public class ListMain {
 
     public void setIcon(Integer icon) {
         this.icon = icon;
+    }
+
+    public String getLegenda() {
+        return legenda;
+    }
+
+    public void setLegenda(String legenda) {
+        this.legenda = legenda;
     }
 }
