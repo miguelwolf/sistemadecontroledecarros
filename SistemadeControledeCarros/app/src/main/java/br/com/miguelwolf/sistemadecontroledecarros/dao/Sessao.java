@@ -6,8 +6,9 @@ package br.com.miguelwolf.sistemadecontroledecarros.dao;
 
 public class Sessao {
 
-    public static String usuario = "";
-    public static int permissao = 0;
+    private static String usuario = "";
+    private static int permissao = 0;
+    private static int cod_usuario = 0;
 
     public Sessao() {
     }
@@ -26,5 +27,13 @@ public class Sessao {
 
     public static void setPermissao(int permissao) {
         Sessao.permissao = permissao;
+    }
+
+    public static int getCod_usuario() {
+        return cod_usuario;
+    }
+
+    public static void setCod_usuario(int cod_usuario) {
+        Sessao.cod_usuario = cod_usuario;
     }
 }

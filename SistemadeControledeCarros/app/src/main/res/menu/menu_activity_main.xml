@@ -10,6 +10,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_criar_empresa"
+        android:orderInCategory="100"
+        android:title="@string/action_criar_empresa"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_configuracoes"
         android:orderInCategory="100"
         android:title="@string/action_configuracoes"

@@ -26,12 +26,12 @@ public class LoginDAO {
         bd = bdAux.getWritableDatabase();
     }
 
-    public void inserir(Login log){
+    public int inserir(Login log){
         ContentValues valores = new ContentValues();
         valores.put("login", log.getLogin());
         valores.put("senha", log.getSenha());
         valores.put("pessoa_codigo", log.getPessoa().getCodigo());
-        bd.insert("tb_login", null, valores);
+        return (int) bd.insert("tb_login", null, valores);
     }
 
     public void atualizar(Login log){
@@ -76,6 +76,28 @@ public class LoginDAO {
 
     }
 
+    public int getPermissao(Pessoa pessoa){
+        List<Login> listLogin = new ArrayList<>();
+        String[] colunas = new String[]{Preferences.PESSOA_SITUACAO};
+
+        Cursor cursor = bd.query(Preferences.TB_PESSOA,colunas, Preferences.PESSOA_CODIGO + "=? ", new String[]{String.valueOf(pessoa.getCodigo())}, null, null, null);
+
+        int permissao = 0;
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+
+            do {
+                permissao = ((int) cursor.getLong(0));
+
+            } while(cursor.moveToNext());
+
+        }
+
+        return permissao;
+
+    }
+
     public boolean verificarSenha(Login log){
         List<Login> listLogin = new ArrayList<>();
         String[] colunas = new String[]{Preferences.LOGIN_CODIGO+", "+Preferences.LOGIN_USUARIO+", "+Preferences.LOGIN_SENHA+", "+Preferences.LOGIN_PESSOA};
@@ -101,9 +123,8 @@ public class LoginDAO {
 
                 Sessao sessao = new Sessao();
                 sessao.setUsuario(cursor.getString(1));
-
-                PESQUISAR PELA PERMISSAO NA PESSOA.
-                sessao.setPermissao(cursor.);
+                sessao.setPermissao(getPermissao(pessoa));
+                sessao.setCod_usuario(pessoa.getCodigo());
 
 
             } while(cursor.moveToNext());

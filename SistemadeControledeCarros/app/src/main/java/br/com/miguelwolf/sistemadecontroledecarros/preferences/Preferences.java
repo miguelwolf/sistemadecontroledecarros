@@ -35,6 +35,12 @@ public class Preferences {
     public static String EMPRESA_EMAIL="email";
     public static String EMPRESA_SITUACAO="situacao";
 
+    public static String PESSOA_CODIGO = "_codigo";
+    public static String PESSOA_NOME = "nome";
+    public static String PESSOA_SITUACAO = "situacao";
+    public static String PESSOA_EMPRESA = "empresa_codigo";
+    public static String PESSOA_FUNCAO_CODIGO = "funcao_codigo";
+
     public static int PERMISSAO_FUNCIONARIO=0;
     public static int PERMISSAO_ADMINISTRADOR=1;
 

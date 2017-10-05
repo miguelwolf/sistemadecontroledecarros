@@ -28,7 +28,7 @@ public class BDCore extends SQLiteOpenHelper{
         bd.execSQL("create table "+Preferences.TB_MANUTENCAO+"(_codigo integer primary key autoincrement, prox_revisao datetime, prox_quilometragem integer, veiculo_codigo integer, tipo_manutencao integer )");
         bd.execSQL("create table "+Preferences.TB_MANUTENCAO_TIPO+"(_codigo integer primary key autoincrement, descricao varchar(150), ativo boolean)");
         bd.execSQL("create table "+Preferences.TB_PERMISSAO+"(_codigo integer primary key autoincrement, funcao varchar(100), habilitada boolean, situacao_permissao boolean)");
-        bd.execSQL("create table "+Preferences.TB_PESSOA+"(_codigo integer primary key autoincrement, nome varchar(150), situacao boolean, empresa_codigo integer, funcao_codigo integer)");
+        bd.execSQL("create table "+Preferences.TB_PESSOA+"("+Preferences.PESSOA_CODIGO+" integer primary key autoincrement, "+Preferences.PESSOA_NOME+" varchar(150), "+Preferences.PESSOA_SITUACAO+" boolean, "+Preferences.PESSOA_EMPRESA+" integer, "+Preferences.PESSOA_FUNCAO_CODIGO+" integer)");
         bd.execSQL("create table "+Preferences.TB_RESERVA+"(_codigo integer primary key autoincrement, data_inicial datetime, data_final datetime, destino varchar(200), veiculo_codigo, integer, pessoa_codigo integer)");
         bd.execSQL("create table "+Preferences.TB_VEICULOS+"(_codigo integer primary key autoincrement, modelo varchar(100), placa varchar(10), url_foto varchar(250), cor varchar(30), ano integer, km_atual integer, data_atual datetime, km_revisao integer, situacao boolean, veiculos_marca_codigo)");
         bd.execSQL("create table "+Preferences.TB_VEICULOS_MARCA+"(_codigo integer primary key autoincrement, nome varchar(150))");

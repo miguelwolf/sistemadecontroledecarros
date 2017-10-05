@@ -18,6 +18,7 @@ import java.util.List;
 import br.com.miguelwolf.sistemadecontroledecarros.R;
 import br.com.miguelwolf.sistemadecontroledecarros.dao.FuncaoDAO;
 import br.com.miguelwolf.sistemadecontroledecarros.dao.LoginDAO;
+import br.com.miguelwolf.sistemadecontroledecarros.dao.PessoaDAO;
 import br.com.miguelwolf.sistemadecontroledecarros.model.Funcao;
 import br.com.miguelwolf.sistemadecontroledecarros.model.Login;
 import br.com.miguelwolf.sistemadecontroledecarros.model.Pessoa;
@@ -41,6 +42,7 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
 
     private FuncaoDAO funcaoDAO;
     private LoginDAO loginDAO;
+    private PessoaDAO pessoaDAO;
 
     private List<Funcao> listFuncao;
 
@@ -132,6 +134,8 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
 
             if (prosseguir) {
                 if (txtSenhaNova.getText().toString().equals(txtSenhaNovaNovamente.getText().toString())) {
+                    pessoa.setCodigo(pessoaDAO.inserir(pessoa));
+                    login.setPessoa(pessoa);
                     loginDAO.inserir(login);
 
                     Snackbar.make(view, "Operação realizada", Snackbar.LENGTH_LONG)
