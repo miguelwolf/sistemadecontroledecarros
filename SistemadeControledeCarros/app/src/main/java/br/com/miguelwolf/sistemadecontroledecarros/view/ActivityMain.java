@@ -74,7 +74,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         //Criamos nossa lista que preenchera o ListView
         itens = new ArrayList<ListMain>();
 
-        if (Sessao.getPermissao() == 1) {
+//        if (Sessao.getPermissao() == 1) {
 //        AGENDA = 0
             itens.add(new ListMain(R.drawable.agenda_wallpaper, R.drawable.ic_event_white_36dp, "Agenda"));
 //        FUNCIONARIO = 1
@@ -83,7 +83,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             itens.add(new ListMain(R.drawable.carro_wallpaper, R.drawable.ic_directions_car_white_36dp, "Veículo"));
 //        RELATÓRIOS = 5
             itens.add(new ListMain(R.drawable.registrar_wallpaper, R.drawable.ic_playlist_add_check_white_36dp, "Relatórios"));
-        }
+//        }
 //        RESERVA = 4
         itens.add(new ListMain(R.drawable.reserva_wallpaper, R.drawable.ic_event_note_white_36dp, "Reserva"));
 //        HISTORICO = 3

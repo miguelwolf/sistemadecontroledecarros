@@ -28,29 +28,127 @@ public class FuncaoDAO {
         ContentValues valores = new ContentValues();
         valores.put(Preferences.FUNCAO_NOME, func.getNome());
 
-        bd.insert(Preferences.TB_EMPRESA, null, valores);
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+    }
+
+    public void inserirFuncoesPadrão(){
+        ContentValues valores = new ContentValues();
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente Superior");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Analista de Sistemas");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Programador");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar Programador");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Estagiário");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente Administrativo");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Técnico Administrativo");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar Administrativo");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente de Vendas");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Técnico de Vendas");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar de Vendas");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Técnico de Informática");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente Designer");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Designer");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar Designer");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente de Marketing");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Técnico Marketing");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar Marketing");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente de Estoque");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Ténico de Estoque");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar de Estoque");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Supervisor");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Técnico em Limpeza");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Gerente de Limpeza");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Auxiliar de Limpeza");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Recepcionista");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
+        valores.put(Preferences.FUNCAO_NOME, "Secretário");
+        bd.insert(Preferences.TB_FUNCAO, null, valores);
+
     }
 
     public void atualizar(Funcao func){
         ContentValues valores = new ContentValues();
         valores.put(Preferences.FUNCAO_CODIGO, func.getCodigo());
         valores.put(Preferences.FUNCAO_NOME, func.getNome());
-        bd.update(Preferences.TB_EMPRESA, valores, Preferences.FUNCAO_CODIGO+" = ?", new String[]{""+func.getCodigo()});
+        bd.update(Preferences.TB_FUNCAO, valores, Preferences.FUNCAO_CODIGO+" = ?", new String[]{""+func.getCodigo()});
     }
 
     public void deletarTodos(){
-        bd.delete(Preferences.TB_EMPRESA, null, null);
+        bd.delete(Preferences.TB_FUNCAO, null, null);
     }
 
     public void deletar(Funcao func){
-        bd.delete(Preferences.TB_EMPRESA, Preferences.FUNCAO_CODIGO+" = "+func.getCodigo(), null);
+        bd.delete(Preferences.TB_FUNCAO, Preferences.FUNCAO_CODIGO+" = "+func.getCodigo(), null);
+    }
+
+    public boolean verificarFuncoes(){
+        String[] colunas = new String[]{Preferences.FUNCAO_CODIGO};
+
+        Cursor cursor = bd.query(Preferences.TB_FUNCAO, colunas, null, null, null, null, null);
+
+        if (cursor.getCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public List<Funcao> buscarTodos(){
         List<Funcao> list = new ArrayList<>();
         String[] colunas = new String[]{Preferences.FUNCAO_CODIGO +","+ Preferences.FUNCAO_NOME};
 
-        Cursor cursor = bd.query(Preferences.TB_EMPRESA, colunas, null, null, null, null, null);
+        Cursor cursor = bd.query(Preferences.TB_FUNCAO, colunas, null, null, null, null, null);
 
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();

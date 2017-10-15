@@ -75,15 +75,9 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
 
         funcaoDAO = new FuncaoDAO(this);
 
-//        funcaoDAO.deletarTodos();
-//
-//        funcaoDAO.inserir(new Funcao("Analista de Sistemas"));
-//        funcaoDAO.inserir(new Funcao("Gerente"));
-//        funcaoDAO.inserir(new Funcao("Designer"));
-//        funcaoDAO.inserir(new Funcao("Programador"));
-//        funcaoDAO.inserir(new Funcao("Estagiário"));
-//        funcaoDAO.inserir(new Funcao("Supervisor"));
-//        funcaoDAO.inserir(new Funcao("Coordenador"));
+        if (!funcaoDAO.verificarFuncoes()) {
+            funcaoDAO.inserirFuncoesPadrão();
+        }
 
         listFuncao = funcaoDAO.buscarTodos();
 
@@ -134,6 +128,7 @@ public class ActivityCadasUsuario extends AppCompatActivity implements View.OnCl
 
             if (prosseguir) {
                 if (txtSenhaNova.getText().toString().equals(txtSenhaNovaNovamente.getText().toString())) {
+                    pessoaDAO = new PessoaDAO(this);
                     pessoa.setCodigo(pessoaDAO.inserir(pessoa));
                     login.setPessoa(pessoa);
                     loginDAO.inserir(login);
